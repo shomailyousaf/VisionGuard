@@ -1,0 +1,3 @@
+class,valid_images,corrupt_or_unreadable,file_size_min_bytes,file_size_median_bytes,file_size_max_bytes,width_min,width_median,width_max,height_min,height_median,height_max
+AI-generated,539,0,11738,199760,5626183,225,1024,6000,135,800,4001
+Real,436,0,11311,144840.0,10195352,183,920.0,8495,158,720.0,7091
