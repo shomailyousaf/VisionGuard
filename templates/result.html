@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionGuard | Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">VisionGuard</a>
+        <div class="nav-links">
+            <a href="/">Upload</a>
+            <a href="/history">History</a>
+            <a href="/health">Health</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="result-card">
+            <p class="eyebrow">ANALYSIS COMPLETE</p>
+            <h1>Prediction Result</h1>
+            <p class="filename">File: {{ filename }}</p>
+
+            <div class="prediction">
+                <span class="prediction-label">{{ result.label }}</span>
+                <h2>{{ "%.2f"|format(result.confidence * 100) }}%</h2>
+                <p>Prediction confidence</p>
+            </div>
+
+            <a class="button-link" href="/">Analyze Another Image</a>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionGuard | AI Image Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">VisionGuard</a>
+        <div class="nav-links">
+            <a href="/">Upload</a>
+            <a href="/history">History</a>
+            <a href="/health">Health</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">AI IMAGE ANALYSIS</p>
+            <h1>Is this image real or AI-generated?</h1>
+            <p class="subtitle">Upload an image and let VisionGuard analyze it.</p>
+
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-card">
+                <label for="image">Choose an image</label>
+                <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    accept=".jpg,.jpeg,.png"
+                    required
+                >
+                <p class="hint">Supported formats: JPG, JPEG and PNG. Maximum size: 5 MB.</p>
+                <button type="submit">Analyze Image</button>
+            </form>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </section>
+    </main>
+</body>
+</html>

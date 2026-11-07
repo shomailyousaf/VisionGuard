@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionGuard | Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">VisionGuard</a>
+        <div class="nav-links">
+            <a href="/">Upload</a>
+            <a href="/history">History</a>
+            <a href="/health">Health</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="result-card">
+            <p class="eyebrow">REQUEST ERROR</p>
+            <h1>Something went wrong</h1>
+            <p class="empty-state">{{ message }}</p>
+            <a class="button-link" href="/">Return to Upload</a>
+        </section>
+    </main>
+</body>
+</html>
